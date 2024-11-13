@@ -26,24 +26,27 @@ function GetRelativeFilePath()
 end
 
 -- Save
-keymap.set("n", "<leader>j", ":w<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>j", ":w<CR>", { noremap = true, silent = true })
 keymap.set("n", "<C-w>", ":w<CR>", { noremap = true, silent = true })
 
 -- Save session
 keymap.set("n", "<Leader>qj", ":mksession! ~/.config/nvim/sessions/session.vim<CR>", { noremap = true, silent = true })
 
 -- Copy file path
-keymap.set("n", "<leader>ya", ":lua GetAbsoluteFilePath()<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>yr", ":lua GetRelativeFilePath()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>ya", ":lua GetAbsoluteFilePath()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>yr", ":lua GetRelativeFilePath()<CR>", { noremap = true, silent = true })
 
 -- Telescope live grep
-keymap.set("n", "<leader>fw", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
+keymap.set("n", "<Leader>fw", "<cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 
 -- Close current buffer
 keymap.set("n", "<Leader>c", ":bd<CR>", { noremap = true, silent = true })
 
 -- Avoid Ex mode (重新映射宏录制键)
 keymap.set("n", "Q", "q", { noremap = true })
+
+-- % jump
+keymap.set("n", "<Leader>z", "%<CR>", { noremap = true, silent = true })
 
 -- Do things without affecting the registers
 keymap.set("n", "x", '"_x')
@@ -86,4 +89,3 @@ end)
 keymap.set("n", "<leader>i", function()
   require("kaixin.lsp").toggleInlayHints()
 end)
-

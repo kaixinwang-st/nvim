@@ -1,12 +1,20 @@
 let SessionLoad = 1
 let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-1 siso=-1
 let v:this_session=expand("<sfile>:p")
+let VM_case_setting = ""
+let VM_disable_syntax_in_imode =  0 
+let BufferlinePinnedBuffers = "/Users/kaixin/Developer/sensortower/overseer/app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryRankingsData.ts,/Users/kaixin/Developer/sensortower/overseer/app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryRankingsForDateData.ts,/Users/kaixin/Developer/sensortower/overseer/app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryHistoryData.ts"
 let VM_check_mappings =  1 
 let VM_mouse_mappings =  0 
+let VM_debug =  0 
 let VM_default_mappings =  1 
 let VM_persistent_registers =  0 
+let VM_live_editing =  1 
+let VM_use_python =  0 
+let VM_reselect_first =  0 
 let VM_highlight_matches = "underline"
-let Coc_tsserver_path = "/Users/ithaka/.config/coc/extensions/node_modules/coc-tsserver/node_modules/typescript/bin/tsc"
+let Coc_tsserver_path = "/Users/kaixin/.config/coc/extensions/node_modules/coc-tsserver/node_modules/typescript/bin/tsc"
+let VM_use_first_cursor_in_line =  0 
 silent only
 silent tabonly
 cd ~/Developer/sensortower/overseer
@@ -19,29 +27,16 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +233 app/assets/javascripts/v2/pages/AppAnalysis/hooks/appAnalysisDataForMetric.ts
-badd +210 app/assets/javascripts/v2/pages/AppAnalysis/utils/aggregateAppAnalysisData.ts
-badd +463 app/assets/javascripts/v2/pages/AppAnalysis/hooks/appAnalysisData.ts
-badd +1 app/assets/javascripts/v2/pages/AppAnalysis/AppAnalysisReportContent.tsx
-badd +48 app/assets/javascripts/v2/pages/AppAnalysis/components/AppAnalysisReportMetricList/AppAnalysisReportMetricList.tsx
-badd +6 app/assets/javascripts/v2/components/ComparisonMetricItem/ComparisonMetricItem.tsx
-badd +128 app/assets/javascripts/v2/components/ComparisonMetric/ComparisonMetric.tsx
-badd +128 app/assets/javascripts/v2/components/ComparisonMetric/ComparisonMetric.test.tsx
-badd +0 ~/Developer/sensortower/overseer
-badd +10 app/assets/javascripts/v2/components/withLoading/withLoading.tsx
-badd +78 cypress/integration/v2/app_analysis/category_rankings/report_drawer_category_rankings_spec.ts
-badd +32 app/assets/javascripts/v2/pages/AppAnalysis/components/AppAnalysisReportMetricList/AppAnalysisReportMetricListPrefixIcon.tsx
-badd +67 cypress/integration/v2/app_analysis/constants.ts
-badd +19 app/assets/javascripts/v2/pages/CategoryRankings/utils/apps.ts
+badd +113 app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryRankingsData.ts
+badd +211 app/assets/javascripts/v2/pages/CategoryRankings/components/CategoryRankingsReportTable/CategoryRankingsReportTable.tsx
+badd +134 app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryRankingsForDateData.ts
+badd +562 app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryHistoryData.ts
+badd +50 app/assets/javascripts/v2/services/api/category/categoryHistory/categoryHistory.ts
+badd +93 app/assets/javascripts/v2/pages/CategoryRankings/components/CategoryRankingsReportTable/CategoryRankingsReportTable.test.tsx
 argglobal
 %argdel
-$argadd ~/Developer/sensortower/overseer
-edit app/assets/javascripts/v2/pages/AppAnalysis/AppAnalysisReportContent.tsx
-let s:save_splitbelow = &splitbelow
-let s:save_splitright = &splitright
-set splitbelow splitright
-let &splitbelow = s:save_splitbelow
-let &splitright = s:save_splitright
+$argadd ./
+edit app/assets/javascripts/v2/pages/CategoryRankings/components/CategoryRankingsReportTable/CategoryRankingsReportTable.tsx
 wincmd t
 let s:save_winminheight = &winminheight
 let s:save_winminwidth = &winminwidth
@@ -49,22 +44,159 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+tcd ~/Developer/sensortower/overseer
 argglobal
-setlocal fdm=indent
-setlocal fde=0
+balt ~/Developer/sensortower/overseer/app/assets/javascripts/v2/pages/CategoryRankings/hooks/categoryRankingsForDateData.ts
+setlocal fdm=expr
+setlocal fde=v:lua.require'lazyvim.util'.ui.foldexpr()
 setlocal fmr={{{,}}}
 setlocal fdi=#
 setlocal fdl=99
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 20) / 40)
+57
+normal! zo
+69
+normal! zo
+82
+normal! zo
+95
+normal! zo
+107
+normal! zo
+120
+normal! zo
+148
+normal! zo
+211
+normal! zo
+243
+normal! zo
+244
+normal! zo
+245
+normal! zo
+259
+normal! zo
+272
+normal! zo
+288
+normal! zo
+313
+normal! zo
+315
+normal! zo
+317
+normal! zo
+333
+normal! zo
+345
+normal! zo
+353
+normal! zo
+387
+normal! zo
+413
+normal! zo
+414
+normal! zo
+426
+normal! zo
+430
+normal! zo
+449
+normal! zo
+451
+normal! zo
+151
+normal! zo
+240
+normal! zo
+250
+normal! zo
+274
+normal! zo
+275
+normal! zo
+276
+normal! zo
+290
+normal! zo
+303
+normal! zo
+312
+normal! zo
+321
+normal! zo
+346
+normal! zo
+348
+normal! zo
+350
+normal! zo
+366
+normal! zo
+379
+normal! zo
+381
+normal! zo
+415
+normal! zo
+441
+normal! zo
+449
+normal! zo
+453
+normal! zo
+472
+normal! zo
+474
+normal! zo
+505
+normal! zo
+514
+normal! zo
+529
+normal! zo
+543
+normal! zo
+558
+normal! zo
+573
+normal! zo
+588
+normal! zo
+601
+normal! zo
+605
+normal! zo
+609
+normal! zo
+622
+normal! zo
+635
+normal! zo
+639
+normal! zo
+654
+normal! zo
+667
+normal! zo
+673
+normal! zo
+688
+normal! zo
+701
+normal! zo
+707
+normal! zo
+let s:l = 211 - ((27 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
-if exists(':tcd') == 2 | tcd ~/Developer/sensortower/overseer | endif
+keepjumps 211
+normal! 045|
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

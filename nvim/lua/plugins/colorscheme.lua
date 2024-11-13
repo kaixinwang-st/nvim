@@ -37,10 +37,13 @@ return {
     "navarasu/onedark.nvim",
     config = function()
       require("onedark").setup({
-        style = "cool", -- Options: 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+        style = "dark", -- Options: 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
       })
       require("onedark").load()
       vim.cmd("colorscheme onedark")
     end,
+  },
+  {
+    "yorumicolors/yorumi.nvim",
   },
 }
