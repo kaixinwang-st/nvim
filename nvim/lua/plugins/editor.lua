@@ -1,23 +1,22 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = {},
-    lazy = false,
-    config = function()
-      require("neo-tree").setup({
+    opts = function(self, opts)
+      return vim.tbl_deep_extend("force", opts, {
         filesystem = {
           filtered_items = {
-            visible = true, -- when true, they will just be displayed differently than normal items
+            visible = true,
             hide_dotfiles = false,
             hide_gitignored = false,
-            hide_hidden = false, -- only works on Windows for hidden files/directories
+            hide_hidden = true,
             hide_by_name = {
-              --"node_modules"
+              "node_modules",
             },
           },
         },
       })
     end,
+    lazy = false,
   },
 
   {
