@@ -14,29 +14,31 @@ layout {
   }
 
   tab name="vim" focus=true {
-    pane name="VIM" {
+    pane name="vim" focus=true {
       command "nvim"
       args "."
     }
   }
 
-  tab name="GIT" {
+  tab name="git" {
     pane name="Lazygit" {
       command "lazygit"
     }
   }
 
-  tab name="SERVER" {
-    pane name="Server" {
-      command "bin/shakapacker-dev-server"
-    }
-
-    panel name="Storybook" {
-      command "yarn storybook"
+  tab name="server" {
+    pane split_direction="vertical" {
+      pane name="shakapacker" {
+        command "bin/shakapacker-dev-server"
+      }
+      pane name="storybook" {
+        command "yarn"
+        args "storybook"
+      }
     }
   }
 
-  tab name="CLI" {
+  tab name="cli" {
     pane name="Cli" {
     }
   }
