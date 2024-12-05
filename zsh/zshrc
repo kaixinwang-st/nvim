@@ -1,0 +1,29 @@
+#DISABLE_MAGIC_FUNCTIONS=true
+
+zinit ice compile'(pure|async).zsh' pick'async.zsh' src'pure.zsh'
+zinit light sindresorhus/pure
+
+## NeoVim
+alias vim="nvim"
+alias gbb="git --no-pager branch"
+alias yi="yarn install"
+
+## Shortcuts
+bindkey "^[[A" up-line-or-history
+bindkey "^[[B" down-line-or-history
+bindkey "[D" backward-word	
+bindkey "[C" forward-word	
+
+## FZF search
+source <(fzf --zsh)
+
+## Dev
+feature_pr(){
+  BRANCH=$(git branch --show-current)
+  IFS=
+  TEMPLATE=$(cat './.gitlab/merge_request_templates/MR.md')
+  FILES=$(git diff --name-only origin/master... | sed -e 's/^/- /' | sed -e 's/$/Ω/' | xargs)
+  echo $TEMPLATE | sed -e "s~YOUR_BRANCH_NAME~$BRANCH~g" | sed -e "s~<!-- List changes to all components; this helps us search MRs modifying components later on -->~$FILES~g" | sed -e 's/Ω/\n/g' | sed -e 's/ - /- /g' | pbcopy
+}
+
+eval "$(pyenv init --path)"
