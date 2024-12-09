@@ -33,6 +33,9 @@ return {
   --     })
   --   end,
   -- },
+  -- {
+  --   "yorumicolors/yorumi.nvim",
+  -- },
   {
     "navarasu/onedark.nvim",
     config = function()
@@ -42,8 +45,5 @@ return {
       require("onedark").load()
       vim.cmd("colorscheme onedark")
     end,
-  },
-  {
-    "yorumicolors/yorumi.nvim",
   },
 }
